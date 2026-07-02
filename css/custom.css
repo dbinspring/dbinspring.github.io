@@ -1,0 +1,211 @@
+/* ===== Butterfly 自定义美化样式 ===== */
+
+/* ========== 全局 ========== */
+:root {
+  --butterfly-color: #667eea;
+  --butterfly-color-dark: #764ba2;
+  --butterfly-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+html {
+  font-family: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+/* ========== 滚动条 ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8ecf1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--butterfly-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--butterfly-color-dark);
+}
+
+/* ========== 首页 Banner ========== */
+#page-header:not(.not-top-img)::before {
+  background: var(--butterfly-gradient) !important;
+  opacity: 0.85;
+}
+
+/* ========== 文章卡片 ========== */
+#recent-posts .recent-post-item {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+}
+
+#recent-posts .recent-post-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18);
+}
+
+#recent-posts .recent-post-item .recent-post-content {
+  padding: 20px;
+}
+
+/* ========== 文章标题 ========== */
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4 {
+  border-bottom: 2px solid var(--butterfly-color);
+  padding-bottom: 8px;
+  margin-top: 32px;
+  color: #2c3e50;
+}
+
+/* ========== 代码块 ========== */
+#article-container pre,
+#article-container code {
+  border-radius: 8px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+#article-container code:not([class*="language-"]) {
+  background: #f0f2f5;
+  color: #e83e8c;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ========== 链接 ========== */
+#article-container a {
+  color: var(--butterfly-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--butterfly-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#article-container a:hover {
+  color: var(--butterfly-color-dark);
+  border-bottom-color: var(--butterfly-color-dark);
+}
+
+/* ========== 标签云 ========== */
+.tag-cloud a {
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  margin: 4px !important;
+  transition: all 0.3s ease;
+}
+
+.tag-cloud a:hover {
+  transform: scale(1.12);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* ========== 侧边栏卡片 ========== */
+#aside-content .card-widget {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ========== 导航栏 ========== */
+#page-header.nav-fixed {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== 页脚 ========== */
+#footer {
+  background: var(--butterfly-gradient) !important;
+  color: white !important;
+  padding: 30px 0 !important;
+}
+
+#footer a {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* ========== 按钮 ========== */
+#post-info > div > a,
+.backBtn {
+  border-radius: 50% !important;
+}
+
+/* ========== 搜索框 ========== */
+#algolia-search .search-input-box {
+  border-radius: 25px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== 文章目录 ========== */
+#aside-content .card-toc a.toc-link {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+#aside-content .card-toc a.toc-link:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--butterfly-color);
+}
+
+#aside-content .card-toc a.toc-link.active {
+  background: var(--butterfly-gradient);
+  color: white;
+}
+
+/* ========== 暗色模式适配 ========== */
+[data-theme="dark"] {
+  body {
+    background: #1a1a2e;
+  }
+  
+  #recent-posts .recent-post-item {
+    background: #16213e;
+  }
+  
+  #page-header:not(.not-top-img)::before {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%) !important;
+  }
+  
+  #footer {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%) !important;
+  }
+  
+  #article-container h1,
+  #article-container h2,
+  #article-container h3 {
+    color: #e0e0e0;
+    border-bottom-color: #8b8fd7;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2a2a3e;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4a4e8a, #6a5f7e);
+  }
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 768px) {
+  #recent-posts .recent-post-item {
+    border-radius: 12px;
+  }
+  
+  #article-container h1,
+  #article-container h2 {
+    font-size: 1.5em;
+  }
+}
