@@ -5693,7 +5693,12 @@ figure.highlight pre .javascript .function {
 }
 .l2d-container#live2d-widget {
   position: fixed;
-minWidth769()
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 300px;
+  z-index: 200;
+  pointer-events: none;
 }
 @media screen and (max-width: 768px) {
   .l2d-container#live2d-widget {
@@ -5704,23 +5709,11 @@ minWidth769()
   position: fixed;
   bottom: 0;
   right: 0;
-width
+  z-index: 200;
+  pointer-events: none;
 }
-.l2d-container#live2d-widget .live2d-player #150px,
-.l2d-container#live2d-widget .live2d-player height: #300px,
-.l2d-container#live2d-widget .live2d-player z-index: 200,
-.l2d-container#live2d-widget .live2d-player pointer-events: none,
-.l2d-container#live2d-widget .live2d-player animation: down-scroll 2s ease-in-out,
-.l2d-container#live2d-widget .live2d-player transition: all .3s ease,
 .l2d-container#live2d-widget .live2d-player tap {
   pointer-events: auto;
-}
-.l2d-container#live2d-widget .live2d-player:hover .live2d-canvas {
-  -webkit-animation: breathe 3s ease-in-out infinite;
-  -moz-animation: breathe 3s ease-in-out infinite;
-  -o-animation: breathe 3s ease-in-out infinite;
-  -ms-animation: breathe 3s ease-in-out infinite;
-  animation: breathe 3s ease-in-out infinite;
 }
 .container .btn-center {
   margin: 0 0 20px;
